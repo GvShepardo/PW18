@@ -1,7 +1,7 @@
 -- ============================
 
 -- Questo file è stato creato con la utility dblook di Derby.
--- Indicatore data/ora: 2023-07-30 18:57:42.692
+-- Indicatore data/ora: 2023-08-06 17:03:09.772
 -- Database di origine: mainDB
 -- URL di connessione: jdbc:derby://localhost:1527/mainDB
 -- La utility dblook prenderà in analisi solo specifiche tabelle.
@@ -17,7 +17,7 @@ CREATE TABLE "APP"."VISITE" ("PAGINA" VARCHAR(255) NOT NULL, "COUNTER" INTEGER);
 
 CREATE TABLE "APP"."USERATTIVITA" ("USERNAME" VARCHAR(255) NOT NULL, "ATTIVITA" VARCHAR(255) NOT NULL);
 
-CREATE TABLE "APP"."USERS" ("USERNAME" VARCHAR(255) NOT NULL, "EMAIL" VARCHAR(255), "PASSWORD" VARCHAR(255), "TYPE" VARCHAR(100));
+CREATE TABLE "APP"."USERS" ("USERNAME" VARCHAR(255) NOT NULL, "EMAIL" VARCHAR(255), "PASSWORD" VARCHAR(255), "TYPE" VARCHAR(100), "NOME" VARCHAR(255) NOT NULL, "COGNOME" VARCHAR(255) NOT NULL, "TEL" VARCHAR(10) NOT NULL, "DOB" TIMESTAMP NOT NULL);
 
 CREATE TABLE "APP"."ATTIVITA" ("NOME" VARCHAR(255) NOT NULL);
 
