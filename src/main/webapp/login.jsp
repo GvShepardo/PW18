@@ -10,33 +10,15 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div class="container">
-		<header>
-			<div class="logo">
-				<img src="attivita1.png" alt="Tum4World Logo">
-			</div>
-			<h1>Tum4World</h1>
-		</header>
-		
-		<ul class="menu">
-			<li><a href="home.jsp">Home</a></li>
-			<li><a href="chisiamo.jsp">Chi siamo</a></li>
-			<li><a href="attivita.jsp">Attività</a></li>
-			<li><a href="contatti.jsp">Contatti</a></li>
-			<li><a href="registrati.jsp">Sign-in</a></li>
-			<li><a href="login.jsp">Login</a></li>
-		</ul>
-	</div>
-	<!-- sopra qui sarebbe tutto headerpass.html -->
-	
+<%@include file="header.jsp"%>
     <div class="container">
 		<div class="content">
 			<h2>Login</h2>
-			<form method="post">
+			<form action="login" method="post">
 				<label for="username">Username</label>
-				<input type="text" class="username" name="username" required>
+				<input type="text" id="username" class="username" name="username" required>
 				<label for="password">Password</label>
-				<input type="password" class="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$!?\^%&]).{8,}" required>
+				<input type="password" id="password" class="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$!?\^%&]).{8,}" required>
 				<i id="togglePasswordLog" class="fa fa-eye"></i>
 				<button type="submit">Entra</button>
 			</form>
@@ -56,15 +38,6 @@
 			this.classList.toggle('fa-eye-slash');
 		});
 	</script>
-	<!-- sotto qui sarebbe tutto footer.html -->
-	
-	<footer>
-		<div class="footer">
-			<p>Tum4World</p>
-			<p>Via Nome della Via, 123</p>
-			<p>18000 Città (NA)</p>
-			<p>Italia</p>
-		</div>
-	</footer>
+<%@include file="footer.jsp"%>
 </body>
 </html>
