@@ -5,8 +5,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
-import java.util.UUID;
-
 
 
 @WebServlet(name = "login", value = "/login")
@@ -34,9 +32,7 @@ public class Login extends HttpServlet {
         String password = request.getParameter("password");
 
         try {
-
             String query = "SELECT * FROM USERS WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'";
-            System.out.println(query);
             Statement stmt = connection.createStatement();
             ResultSet resultSet = stmt.executeQuery(query);
 
@@ -53,7 +49,6 @@ public class Login extends HttpServlet {
             } else {
                 request.getRequestDispatcher("loginError.jsp").forward(request, response);
             }
-
             resultSet.close();
             connection.close();
         } catch (SQLException e) {
