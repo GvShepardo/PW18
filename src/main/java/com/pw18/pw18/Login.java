@@ -7,12 +7,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.UUID;
 
-/*                              PER APRIRE IL DB:
-      java -jar C:/Users/iusti/db-derby-10.14.2.0-bin/lib/derbyrun.jar server start
 
-                          Poi, su un secondo terminale:
-      java -jar C:/Users/iusti/db-derby-10.14.2.0-bin/lib/derbyrun.jar ij
-      connect 'jdbc:derby://localhost:1527/mainDB;create=true';       */
 
 @WebServlet(name = "login", value = "/login")
 public class Login extends HttpServlet {
