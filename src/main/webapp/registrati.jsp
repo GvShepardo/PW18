@@ -11,6 +11,7 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+<%@include file="cookie.jsp"%>
 
 <div class="container">
     <div class="content">

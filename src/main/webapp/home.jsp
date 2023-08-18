@@ -10,7 +10,7 @@
 </head>
 <body>
 <%@include file="header.jsp"%>
-
+<%@include file="cookie.jsp"%>
 		<!-- sopra qui sarebbe tutto header.html -->
 	<div class="container">	<!-- avrei potuto riutilizzare il container dell'header ma per rendere le pagine più indipendenti lo ho rimesso qui -->
 		<div class="content">

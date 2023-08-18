@@ -10,6 +10,7 @@
 </head>
 <body>
 <%@include file="header.jsp"%>
+<%@include file="cookie.jsp"%>
 	<div class="container">	<!-- avrei potuto riutilizzare il container dell'header ma per rendere le pagine più indipendenti lo ho rimesso qui -->
 		<div class="content">
 			<h2>Contatti</h2>
@@ -17,8 +18,8 @@
 			<p>Telefono: +39 312 345 6789</p>
 			<h3>Inviaci un messaggio</h3>
 			<form class="contact-form" method="post">	<!-- dato che nel testo non era specificato (a differenza della pagina sign-in) ho messo come required solo la e-mail -->
-				<label for="email">Indirizzo email</label>
-				<input type="email" class="email" name="email" required> 	<!-- questo tipo controlla in automatico se è una mail valida -->
+				<label for="emailreg">Indirizzo email</label>
+				<input type="email" class="email" name="email" id="emailreg" required> 	<!-- questo tipo controlla in automatico se è una mail valida -->
 
 				<label for="reason">Motivo di contatto</label>
 				<select id="reason" name="reason" >
@@ -32,8 +33,8 @@
 				<textarea id="Altra-Ragione" name="Altra-Ragione" placeholder="Descrivi perché ci contatti"></textarea>
 
 
-				<label for="message">Messaggio</label>
-				<textarea class="message" name="message" rows="5" ></textarea>
+				<label for="messagereg">Messaggio</label>
+				<textarea class="message" name="message" rows="5" id="messagereg" ></textarea>
 
 				<button type="submit">Invia</button>
 				<button type="reset">Reset</button>
