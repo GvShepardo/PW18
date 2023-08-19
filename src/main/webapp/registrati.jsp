@@ -16,7 +16,7 @@
 <div class="container">
     <div class="content">
         <h2>Registrazione</h2>
-        <form method="post">
+        <form action="register", method="post">
             <label for="namereg">Nome</label>
             <input type="text" id="namereg" class="name" name="name" required>
 

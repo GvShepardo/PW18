@@ -93,7 +93,8 @@ public class Register extends HttpServlet {
             usernameCookie.setMaxAge(600);
             response.addCookie(usernameCookie);
             response.setStatus(HttpServletResponse.SC_OK);
-            response.sendRedirect("home.jsp"); // Change to your secure page's URL
+
+            response.sendRedirect("RegisterConfirm.jsp"); // Change to your secure page's URL
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
