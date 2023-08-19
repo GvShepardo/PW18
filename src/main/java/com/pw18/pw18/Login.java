@@ -37,13 +37,13 @@ public class Login extends HttpServlet {
             ResultSet resultSet = stmt.executeQuery(query);
 
             if (resultSet.next()) {
-                HttpSession session = request.getSession(true);
-                session.setAttribute("username", username);
-                session.setMaxInactiveInterval(600);
-
-                Cookie usernameCookie = new Cookie("username", username);
+                Cookie usernameCookie = new Cookie("username", resultSet.getString("type"));
                 usernameCookie.setMaxAge(600);
                 response.addCookie(usernameCookie);
+
+                Cookie typeOfProfileCookie = new Cookie("type", resultSet.getString("type"));
+                typeOfProfileCookie.setMaxAge(600);
+                response.addCookie(typeOfProfileCookie);
 
                 response.sendRedirect("home.jsp"); // Change to your secure page's URL
             } else {
