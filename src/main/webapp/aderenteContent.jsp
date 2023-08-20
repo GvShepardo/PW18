@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="body">
-<h1>Dettagli Utente</h1>
+    <h1>Dettagli Utente</h1>
 
-<div>
-    <p><strong>Nome:</strong> John</p>
-    <p><strong>Cognome:</strong> Doe</p>
-    <p><strong>Username:</strong> johndoe</p>
-</div>
-<div class="contenitore-wrapper">
-    <div class="contenitore">
-        <h2>Container 1</h2>
-        <img src="image1.jpg" alt="Immagine 1">
-        <button class="green-button">Bottone 1</button>
+    <div>
+        <p><strong>Nome:</strong> John</p>
+        <p><strong>Cognome:</strong> Doe</p>
+        <p><strong>Username:</strong> johndoe</p>
+    </div>
+    <div class="contenitore-wrapper">
+        <div class="contenitore">
+            <h2>Container 1</h2>
+            <img src="image1.jpg" alt="Immagine 1">
+            <button class="green-button">Bottone 1</button>
+        </div>
+
+        <div class="contenitore">
+            <h2>Container 2</h2>
+            <img src="image2.jpg" alt="Immagine 2">
+            <button class="green-button">Bottone 2</button>
+        </div>
+
+        <div class="contenitore">
+            <h2>Container 3</h2>
+            <img src="image3.jpg" alt="Immagine 3">
+            <button class="green-button">Bottone 3</button>
+        </div>
     </div>
 
-    <div class="contenitore">
-        <h2>Container 2</h2>
-        <img src="image2.jpg" alt="Immagine 2">
-        <button class="green-button">Bottone 2</button>
-    </div>
+    <form action="donazione" method="patch">
+        <label for="donazione">Quanto vuoi donare?</label>
+        <input type="number" id="donazione" name="donazione" required/>
+        <button type="submit">DONA</button>
+    </form>
 
-    <div class="contenitore">
-        <h2>Container 3</h2>
-        <img src="image3.jpg" alt="Immagine 3">
-        <button class="green-button">Bottone 3</button>
-    </div>
-</div>
-
-<button class="green-button final-button"> CANCELLA PROFILO </button>
+    <button class="green-button final-button"> CANCELLA PROFILO </button>
 </div>
 </body>
 </html>

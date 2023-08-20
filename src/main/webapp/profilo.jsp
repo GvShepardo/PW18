@@ -47,7 +47,7 @@
         window.location.href = "Aderente.jsp"
     }
     else if(cookie === "admin"){
-        window.location.href = "Admin.jsp"
+        window.location.href = "AdminHeader.jsp"
     }
     else{
         window.location.href = "ERRORE.jsp"

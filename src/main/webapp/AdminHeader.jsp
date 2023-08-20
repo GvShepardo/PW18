@@ -13,7 +13,7 @@
 <%@include file="cookie.jsp"%>
 
 <div class="container">
-    ERRORE, NON E' STATO TROVATO UN TIPO DI PROFILO GIUSTO
+    <%@include file="adminContent.jsp"%>
 </div>
 
 <%@include file="footer.jsp"%>

@@ -101,6 +101,7 @@ header {
 }
 
 .menu a:hover, .button a:hover {
+	cursor: hand;
 	text-decoration: underline;
 }
 
@@ -129,6 +130,7 @@ img {
 }
 
 .button a:hover {
+	cursor: pointer;
     opacity: 0.8;
 }
 
@@ -184,6 +186,7 @@ form input[type="email"],
 form input[type="password"],
 form input[type="tel"],
 form input[type="date"],
+form input[type="number"],
 form textarea,
 form fieldset {
 	width: 99%;		/* 100% da problemi, cercando su internet non ho capito perché, fra 99% e 101% ho preferito 99 */

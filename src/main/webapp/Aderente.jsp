@@ -1,16 +1,21 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: iusti
-  Date: 19/08/2023
-  Time: 18:53
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
+<html lang="it">
+
 <head>
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>Tum4World</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="attivita1.png">
 </head>
 <body>
+<%@include file="header.jsp"%>
+<%@include file="cookie.jsp"%>
 
+<div class="container">
+    <%@include file="aderenteContent.jsp"%>
+</div>
+
+<%@include file="footer.jsp"%>
 </body>
 </html>

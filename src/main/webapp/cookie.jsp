@@ -46,7 +46,7 @@
     }
 
     // Controlla se l'utente ha già accettato i cookie
-    var cookieAccettati = document.cookie.includes("cookieAccettati=true");
+    cookieAccettati = document.cookie.includes("cookieAccettati=true");
     if (cookieAccettati) {
         var cookieBanner = document.querySelector(".cookie-banner");
         cookieBanner.style.display = "none";

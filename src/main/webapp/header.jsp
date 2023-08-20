@@ -15,7 +15,7 @@
         <li class="logged-out"><a href="registrati.jsp"> Sign-in </a></li>
         <li class="logged-out"><a href="login.jsp"> Login </a></li>
         <li class="logged-in"><a href="profilo.jsp"> Profilo </a></li>
-        <li class="logged-in"><a href="logOut.jsp"> ESCI </a></li>
+        <li class="logged-in"><a onclick="logOut()"> ESCI </a></li>
     </ul>
 </div>
 
@@ -31,4 +31,12 @@
             li.style.display = "none";
         });
     }
+
+
+    function logOut() {
+        document.cookie = `username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        document.cookie = `type=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        window.location.href = "home.jsp"
+    }
+
 </script>
