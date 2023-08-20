@@ -1,13 +1,14 @@
 <script>
 	function updatePhrase() {
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState === 4 && xhr.status === 200) {
-				document.getElementById("phrase").innerText = xhr.responseText;
-			}
-		};
-		xhr.open("GET", "RandomPhraseServlet", true);
-		xhr.send();
+		fetch("RandomPhraseAPI", {
+			method: "GET"
+		})
+				.then(response => response.text())
+				.then(data => {
+					console.log(data)
+					document.getElementById("phrase").innerText = data;
+					})
+
 	}
 
 	window.onload = function() {

@@ -32,10 +32,9 @@
         });
     }
 
-
     function logOut() {
-        document.cookie = `username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-        document.cookie = `type=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        document.cookie = `username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+        document.cookie = `type=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
         window.location.href = "home.jsp"
     }
 

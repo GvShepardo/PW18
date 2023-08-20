@@ -50,13 +50,7 @@ public class Login extends HttpServlet {
                 request.getRequestDispatcher("loginError.jsp").forward(request, response);
             }
             resultSet.close();
-            connection.close();
         } catch (SQLException e) {
-            try {
-                connection.close();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
             e.printStackTrace();
             response.getWriter().write("An error occurred.");
         }

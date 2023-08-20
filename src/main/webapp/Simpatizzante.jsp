@@ -2,6 +2,11 @@
 <html>
 <html lang="it">
 
+<script  src="./javascript/Visite.js"></script>
+<script>
+    updateVisite("Profilo")
+</script>
+
 <head>
     <meta charset="utf-8">
     <title>Tum4World</title>

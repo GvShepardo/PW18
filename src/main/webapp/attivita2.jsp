@@ -2,6 +2,11 @@
 <html>
 <html lang="it">
 
+<script  src="./javascript/Visite.js"></script>
+<script>
+    updateVisite("Attivita2")
+</script>
+
 <head>
     <meta charset="utf-8">
     <title>Tum4World</title>

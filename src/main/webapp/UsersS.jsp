@@ -32,7 +32,6 @@
         .then(response => response.json())
         .then(data => {
             var lista = document.getElementById("listaUtenti")
-            console.log(data)
             data.forEach(item =>{
                 var json = JSON.parse(item)
                 var newLi = document.createElement("li");
