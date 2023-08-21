@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/RandomPhraseServlet")
+@WebServlet(value = "/RandomPhraseAPI", name ="RandomPhraseAPI")
 public class RandomPhraseServlet extends HttpServlet {
     private static final String[] phrases = {
             "Il segreto per ottenere ciò che vuoi è cominciare a farlo.",
@@ -38,6 +38,7 @@ public class RandomPhraseServlet extends HttpServlet {
             throws ServletException, IOException {
         String randomPhrase = getRandomPhrase();
         response.setContentType("text/plain");
+        response.setCharacterEncoding("utf-8");
         response.getWriter().write(randomPhrase);
     }
 

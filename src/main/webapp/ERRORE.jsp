@@ -9,15 +9,13 @@
     <link rel="icon" type="image/x-icon" href="attivita1.png">
 </head>
 <body>
-<%@include file="header.jsp" %>
+<%@include file="header.jsp"%>
 <%@include file="cookie.jsp"%>
+
 <div class="container">
-    <!-- avrei potuto riutilizzare il container dell'header ma per rendere le pagine più indipendenti lo ho rimesso qui -->
-    <div class="content">
-        <h2>Grazie per averci contattato!</h2>
-        <p>Riceverai risposta a breve</p>
-    </div>
+    ERRORE, NON E' STATO TROVATO UN TIPO DI PROFILO GIUSTO
 </div>
-<%@include file="footer.jsp" %>
+
+<%@include file="footer.jsp"%>
 </body>
 </html>

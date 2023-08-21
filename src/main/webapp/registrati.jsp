@@ -2,6 +2,11 @@
 <html>
 <html lang="it">
 
+<script  src="./javascript/Visite.js"></script>
+<script>
+    updateVisite("SignIn")
+</script>
+
 <head>
     <meta charset="utf-8">
     <title>Tum4World</title>
@@ -11,27 +16,28 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+<%@include file="cookie.jsp"%>
 
 <div class="container">
     <div class="content">
         <h2>Registrazione</h2>
-        <form action="register" method="post">
-            <label for="name">Nome</label>
+        <form action="register", method="post">
+            <label for="namereg">Nome</label>
             <input type="text" id="namereg" class="name" name="name" required>
 
-            <label for="surname">Cognome</label>
-            <input type="text" class="surname" name="surname" required>
+            <label for="surnamereg">Cognome</label>
+            <input type="text" class="surname" name="surname" id="surnamereg" required>
 
-            <label for="birthdate">Data di nascita</label>
-            <input type="date" class="birthdate" name="birthdate" required>
+            <label for="birthdatereg">Data di nascita</label>
+            <input type="date" class="birthdate" name="birthdate" id="birthdatereg" required>
             <!-- usato in questo modo date è supportato da tutti i browser non deprecati,
             percui non ho messo altri controlli a differenza di come viene consigliato da https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
 
-            <label for="email">Email</label>
-            <input type="email" class="email" name="email" required>
+            <label for="emailreg">Email</label>
+            <input type="email" class="email" name="email" id="emailreg" required>
 
-            <label for="phone">Telefono</label>
-            <input type="tel" class="phone" name="phone"
+            <label for="phonereg">Telefono</label>
+            <input type="tel" class="phone" name="phone" id="phonereg"
                    pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" required>
 
             <label for="fieldreg">Registrati come</label>
@@ -45,17 +51,17 @@
                 </div>
             </fieldset>
 
-            <label for="username">Username</label>
-            <input type="text" class="username" name="username" required>
+            <label for="usernamereg">Username</label>
+            <input type="text" class="username" name="username" id="usernamereg" required>
 
-            <label for="password">Password (min. 8 caratteri, una lettera maiuscola, un carattere numerico e un
+            <label for="passwordreg">Password (min. 8 caratteri, una lettera maiuscola, un carattere numerico e un
                 carattere tra $, ! e ?)</label>
             <input type="password" class="password" id="passwordreg" name="password"
                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$!?\^%&]).{8,}" required>
             <i id="togglePasswordReg" class="fa fa-eye"></i>
-            <label for="confirm-password">Conferma password</label>
+            <label for="confirm-passwordreg">Conferma password</label>
             <input type="password" class="confirm-password" id="confirm-passwordreg" name="confirm-password"
-                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$!?\^%&]).{8,}" required>
+                   pattern="^(?=.*[0-9])(?=.*[A-Z])(?=.*[N]{2})(?=.*[I])(?=\S+$).{8,}$" required>
             <i id="togglePasswordRegC" class="fa fa-eye"></i>
             <button type="submit">Registrati</button>
 

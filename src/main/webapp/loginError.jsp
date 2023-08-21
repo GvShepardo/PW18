@@ -11,6 +11,7 @@
 <body>
 <div class="container">
     <%@include file="header.jsp" %>
+    <%@include file="cookie.jsp"%>
     <div class="container">
         <!-- avrei potuto riutilizzare il container dell'header ma per rendere le pagine più indipendenti lo ho rimesso qui -->
         <div class="content">

@@ -2,6 +2,11 @@
 <html>
 <html lang="it">
 
+<script  src="./javascript/Visite.js"></script>
+<script>
+    updateVisite("Attivita2")
+</script>
+
 <head>
     <meta charset="utf-8">
     <title>Tum4World</title>
@@ -10,6 +15,7 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+<%@include file="cookie.jsp"%>
 <div class="container">
     <!-- avrei potuto riutilizzare il container dell'header ma per rendere le pagine più indipendenti lo ho rimesso qui -->
     <div class="content">

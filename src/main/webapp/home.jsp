@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
-<html lang="it">
-
+<script  src="./javascript/Visite.js"></script>
+<script>
+	updateVisite("Home")
+</script>
 <head>
 	<meta charset="utf-8">
 	<title>Tum4World</title>
@@ -10,7 +10,7 @@
 </head>
 <body>
 <%@include file="header.jsp"%>
-
+<%@include file="cookie.jsp"%>
 		<!-- sopra qui sarebbe tutto header.html -->
 	<div class="container">	<!-- avrei potuto riutilizzare il container dell'header ma per rendere le pagine più indipendenti lo ho rimesso qui -->
 		<div class="content">
@@ -23,9 +23,10 @@
 			<div class="button">
 				<a href="volantino.pdf" download>Scarica il volantino</a>
 			</div>
+			<button onclick="updateVisite('Home')">CLICCAMI VISITE</button>
 		</div>
 	</div>
-
 <%@include file="footer.jsp"%>
+
+
 </body>
-</html>
