@@ -102,10 +102,17 @@ public class Register extends HttpServlet {
             response.sendRedirect("RegisterConfirm.jsp"); // Change to your secure page's URL
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Errore DB.");
+            if(e.getSQLState().equals("23505")) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Username taken");
+            }
+            else {
+                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Errore DB.");
+            }
         } catch (IOException e) {
+            e.printStackTrace();
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Errore nell'input.");
         } catch (ParseException e) {
+            e.printStackTrace();
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Formato data di nascita non valido.");
         } catch (NullPointerException e) {
             e.printStackTrace();

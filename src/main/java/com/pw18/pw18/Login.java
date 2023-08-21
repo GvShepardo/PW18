@@ -37,7 +37,7 @@ public class Login extends HttpServlet {
             ResultSet resultSet = stmt.executeQuery(query);
 
             if (resultSet.next()) {
-                Cookie usernameCookie = new Cookie("username", resultSet.getString("type"));
+                Cookie usernameCookie = new Cookie("username", resultSet.getString("username"));
                 usernameCookie.setMaxAge(600);
                 response.addCookie(usernameCookie);
 

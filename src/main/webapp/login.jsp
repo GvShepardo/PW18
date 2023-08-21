@@ -24,7 +24,7 @@
 				<label for="username">Username</label>
 				<input type="text" id="username" class="username" name="username" required>
 				<label for="password">Password</label>
-				<input type="password" id="password" class="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$!?\^%&]).{8,}" required>
+				<input type="password" id="password" class="password" name="password" required>
 				<i id="togglePasswordLog" class="fa fa-eye"></i>
 				<button type="submit">Entra</button>
 			</form>
