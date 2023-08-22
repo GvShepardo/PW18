@@ -8,9 +8,19 @@
 <h1>Dettagli Utente</h1>
 
 <div>
-    <p><strong>Nome:</strong> John</p>
-    <p><strong>Cognome:</strong> Doe</p>
-    <p><strong>Username:</strong> johndoe</p>
+    <ul>
+        <label for="nome">Nome:</label>
+        <strong><li id="nome"></li></strong>
+        .<label for="cognome">Cognome:</label>
+        <strong><li id="cognome"></li></strong>
+        <label for="username">Username:</label>
+        <strong><li id="username"></li></strong>
+        <label for="email">Email:</label>
+        <strong><li id="email"></li></strong>
+        <label for="telefono">Telefono:</label>
+        <strong><li id="telefono"></li></strong>
+
+    </ul>
 </div>
 <div class="contenitore-wrapper">
     <div class="contenitore">
@@ -36,7 +46,29 @@
 </div>
 </body>
 </html>
+<script>
+    fetch("getUser",{
+        method: "GET"
+    })
+        .then(response => response.json())
+        .then(data => {
+            var nome = document.getElementById("nome");
+            var cognome = document.getElementById("cognome");
+            var username = document.getElementById("username");
+            var email = document.getElementById("email");
+            var telefono = document.getElementById("telefono");
 
+            console.log(data)
+            data.forEach(item =>{
+                var json = JSON.parse(item)
+                nome.textContent = json.nome;
+                cognome.textContent = json.cognome;
+                username.textContent = json.username;
+                email.textContent = json.email;
+                telefono.textContent = json.tel;
+            })
+        })
+</script>
 
 <style>
 

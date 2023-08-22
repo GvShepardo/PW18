@@ -28,12 +28,14 @@ public class Register extends HttpServlet {
     private static final String DB_PASSWORD = "password";
 
     Connection connection = null;
+    boolean closed;
 
     @Override
     public void init() {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            closed = false;
         } catch (ClassNotFoundException | NullPointerException | SQLException ex) {
             System.out.println(ex);
         }
@@ -41,8 +43,14 @@ public class Register extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("A");
-        // Ottieni la connessione al database dal ServletContext
+        if(closed) {
+            try {
+                Class.forName("org.apache.derby.jdbc.ClientDriver");
+                connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            } catch (ClassNotFoundException | NullPointerException | SQLException ex) {
+                System.out.println(ex);
+            }
+        }
 
         try {
             System.out.println("B");
@@ -86,7 +94,7 @@ public class Register extends HttpServlet {
             // Esegui l'inserimento
             pstmt.executeUpdate();
             pstmt.close();
-
+            closed=true;
             // Invia una risposta di successo al frontend
 
             Cookie usernameCookie = new Cookie("username", username);
