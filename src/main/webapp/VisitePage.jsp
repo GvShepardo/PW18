@@ -68,7 +68,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         const chart = Highcharts.chart('chart', {
             chart: {
-                type: 'bar'
+                type: 'column'
             },
             bar:{
               color: '#46556e'
@@ -77,6 +77,7 @@
                 text: 'Visite Pagine'
             },
             xAxis: {
+                //categories: ["home", "profilo", "a", "b", "c", "d", "e", "a", "a", "a", "a"] //PER TEST
                 categories: pagine
             },
             yAxis: {
@@ -85,6 +86,7 @@
                 }
             },
             series: [{
+                //data: [3,7,1,2,3,4,5,6,7,8,9],   //PER TEST
                 color: '#333',
                 data: visite
             }]
