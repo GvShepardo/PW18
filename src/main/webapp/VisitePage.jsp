@@ -19,12 +19,13 @@
     <%@include file="adminContent.jsp"%>
     <div class="content">
         <h2 style="text-align: center"> LISTA VISITE</h2>
-        <table id="listaVisite" class="listaVisite">
+        <table id="listaVisite">
             <tr>
                 <th>PAGINA</th>
                 <th>VISITE</th>
             </tr>
         </table>
+        <button style="display: flex; align-self: center" onclick="reset()"> RESETTA VISITE </button>
     </div>
 </div>
 
@@ -55,7 +56,12 @@
             })
         })
 
-
+    function reset(){
+        fetch("visite", {
+            method: "DELETE",
+        })
+            .then(location.reload)
+    }
 
 </script>
 

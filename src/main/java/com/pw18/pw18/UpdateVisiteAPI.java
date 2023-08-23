@@ -40,4 +40,17 @@ public class UpdateVisiteAPI extends HttpServlet {
         }
 
     }
+
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        try {
+
+            String query = "UPDATE VISITE SET COUNTER = 0";
+            connection.createStatement().executeUpdate(query);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

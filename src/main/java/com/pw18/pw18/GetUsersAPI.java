@@ -37,15 +37,18 @@ public class GetUsersAPI extends HttpServlet {
 
 
         try{
-            String query = "SELECT USERNAME FROM USERS";
+            String query = "SELECT * FROM USERS";
             Statement stmt = connection.createStatement();
             ResultSet resultSet = stmt.executeQuery(query);
 
             JsonArray jsonArray = new JsonArray();
 
             while(resultSet.next()){
+
                 Gson gson = new Gson();
-                User user = new User(resultSet.getString("username"));
+                User user = new User(resultSet.getString("username"), resultSet.getString("nome"),
+                        resultSet.getString("cognome"),resultSet.getString("email"),
+                        resultSet.getString("tel"),resultSet.getString("type"));
                 jsonArray.add(gson.toJson(user)); //riga 49
             }
 

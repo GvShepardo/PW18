@@ -245,8 +245,7 @@ form textarea {
 	height: 7.5rem;
 }
 
-form button[type="submit"],
-form button[type="reset"] {
+button {
 	background-color: var(--button-color);
 	border: none;
 	color: var(--alt-color);
@@ -260,8 +259,7 @@ form button[type="reset"] {
 	cursor: pointer;
 }
 
-form button[type="submit"]:hover,
-form button[type="reset"]:hover {
+button:hover {
 	background-color: var(--button-hover-color);
 }
 

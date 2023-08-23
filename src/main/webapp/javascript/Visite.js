@@ -1,7 +1,5 @@
 function updateVisite(nomePagina){
 
-    console.log("ciao")
-
     fetch("visite", {
         method: "PUT",
         headers: {

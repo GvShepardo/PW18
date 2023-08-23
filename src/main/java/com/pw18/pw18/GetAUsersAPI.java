@@ -36,7 +36,7 @@ public class GetAUsersAPI extends HttpServlet {
 
 
         try{
-            String query = "SELECT USERNAME FROM USERS WHERE TYPE='aderente'";
+            String query = "SELECT * FROM USERS WHERE TYPE='aderente'";
             Statement stmt = connection.createStatement();
             ResultSet resultSet = stmt.executeQuery(query);
 
@@ -44,7 +44,9 @@ public class GetAUsersAPI extends HttpServlet {
 
             while(resultSet.next()){
                 Gson gson = new Gson();
-                User user = new User(resultSet.getString("username"));
+                User user = new User(resultSet.getString("username"), resultSet.getString("nome"),
+                        resultSet.getString("cognome"),resultSet.getString("email"),
+                        resultSet.getString("tel"),resultSet.getString("type"));
                 jsonArray.add(gson.toJson(user)); //riga 49
             }
 

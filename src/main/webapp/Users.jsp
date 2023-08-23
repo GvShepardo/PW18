@@ -16,8 +16,15 @@
     <%@include file="adminContent.jsp"%>
     <div class="content">
     <h2 style="text-align: center"> UTENTI REGISTRATI</h2>
-    <ul id="listaUtenti">
-    </ul>
+        <table id="listaUtenti">
+            <tr>
+                <th> NOME</th>
+                <th> COGNOME</th>
+                <th> USERNAME</th>
+                <th> EMAIL</th>
+                <th> CELL</th>
+            </tr>
+        </table>
     </div>
 </div>
 
@@ -35,9 +42,28 @@
         console.log(data)
     data.forEach(item =>{
         var json = JSON.parse(item)
-            var newLi = document.createElement("li");
-            newLi.textContent = json.username;
-            lista.appendChild(newLi);
+
+        var tr = document.createElement("tr");
+
+        var nomeTd = document.createElement("td");
+        var cognomeTd = document.createElement("td");
+        var usernameTd = document.createElement("td");
+        var emailTd = document.createElement("td");
+        var cellTd = document.createElement("td");
+
+        nomeTd.textContent = json.nome;
+        cognomeTd.textContent = json.cognome;
+        usernameTd.textContent = json.username;
+        emailTd.textContent = json.email;
+        cellTd.textContent = json.cell;
+
+        tr.appendChild(nomeTd)
+        tr.appendChild(cognomeTd)
+        tr.appendChild(usernameTd)
+        tr.appendChild(emailTd)
+        tr.appendChild(cellTd)
+
+        document.getElementById("listaUtenti").appendChild(tr)
     })
     })
 </script>
