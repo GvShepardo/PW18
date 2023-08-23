@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <html lang="it">
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
 
 
@@ -25,6 +26,7 @@
                 <th>VISITE</th>
             </tr>
         </table>
+        <div id="chart" style="width:100%; height:400px;"></div>
         <button style="display: flex; align-self: center" onclick="reset()"> RESETTA VISITE </button>
     </div>
 </div>
@@ -34,20 +36,27 @@
 
 <script>
 
+    var pagine = [];
+    var visite = [];
+
     fetch("GetVisits", {
         method:"GET"
     })
         .then(response => response.json())
         .then(data => {
             var tabella = document.getElementById("listaVisite")
+            var i=0;
             data.forEach(item => {
                 console.log(item)
                 var json = JSON.parse(item)
                 var riga = document.createElement("tr");
                 var pagina = document.createElement("td");
                 pagina.textContent = json.pagina;
+                pagine[i]=json.pagina;
                 var visite = document.createElement("td");
                 visite.textContent = json.visite;
+                visite[i]=json.pagina;
+                i++;
 
                 riga.appendChild(pagina);
                 riga.appendChild(visite)
@@ -55,6 +64,32 @@
                 tabella.appendChild(riga)
             })
         })
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const chart = Highcharts.chart('chart', {
+            chart: {
+                type: 'bar'
+            },
+            bar:{
+              color: '#46556e'
+            },
+            title: {
+                text: 'Visite Pagine'
+            },
+            xAxis: {
+                categories: pagine
+            },
+            yAxis: {
+                title: {
+                    text: 'visite'
+                }
+            },
+            series: [{
+                color: '#333',
+                data: visite
+            }]
+        });
+    });
 
     function reset(){
         fetch("visite", {
