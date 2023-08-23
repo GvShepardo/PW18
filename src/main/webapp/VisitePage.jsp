@@ -70,6 +70,7 @@
             chart: {
                 type: 'column'
             },
+            legend:{ enabled:false },
             bar:{
               color: '#46556e'
             },
