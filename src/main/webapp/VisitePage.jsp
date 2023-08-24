@@ -36,8 +36,9 @@
 
 <script>
 
+
     var pagine = [];
-    var visite = [];
+    var visita = [];
 
     fetch("GetVisits", {
         method:"GET"
@@ -55,7 +56,7 @@
                 pagine[i]=json.pagina;
                 var visite = document.createElement("td");
                 visite.textContent = json.visite;
-                visite[i]=json.pagina;
+                visita[i]=json.visite;
                 i++;
 
                 riga.appendChild(pagina);
@@ -63,9 +64,15 @@
                 console.log(riga)
                 tabella.appendChild(riga)
             })
+
+            console.log("Pagine: " + pagine)
+            console.log("Visite: " + visita)
+
+            chart.series[0].setData(visita);
+            chart.xAxis[0].categories=pagine
+            chart.redraw()
         })
 
-    document.addEventListener('DOMContentLoaded', function () {
         const chart = Highcharts.chart('chart', {
             chart: {
                 type: 'column'
@@ -78,8 +85,6 @@
                 text: 'Visite Pagine'
             },
             xAxis: {
-                //categories: ["home", "profilo", "a", "b", "c", "d", "e", "a", "a", "a", "a"] //PER TEST
-                categories: pagine
             },
             yAxis: {
                 title: {
@@ -87,11 +92,8 @@
                 }
             },
             series: [{
-                //data: [3,7,1,2,3,4,5,6,7,8,9],   //PER TEST
                 color: '#333',
-                data: visite
             }]
-        });
     });
 
     function reset(){
