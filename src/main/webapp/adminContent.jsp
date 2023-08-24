@@ -5,7 +5,7 @@
         <li><a href="UsersS.jsp"> Mostra simpattizanti </a></li>
         <li><a href="UsersA.jsp"> Mostra aderenti </a></li>
         <li><a href="VisitePage.jsp"> Mostra visitatori </a></li>
-        <li><a> Mostra donazioni </a></li>
+        <li><a href="donazioni.jsp"> Mostra donazioni </a></li>
     </ul>
 
 </body>
