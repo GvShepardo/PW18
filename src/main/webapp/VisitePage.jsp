@@ -68,9 +68,9 @@
             console.log("Pagine: " + pagine)
             console.log("Visite: " + visita)
 
-            chart.series[0].setData(visita);
             chart.xAxis[0].categories=pagine
             chart.redraw()
+            chart.series[0].setData(visita);
         })
 
         const chart = Highcharts.chart('chart', {
@@ -100,7 +100,7 @@
         fetch("visite", {
             method: "DELETE",
         })
-            .then(location.reload)
+            .then(location.reload())
     }
 
 </script>
