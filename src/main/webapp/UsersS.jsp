@@ -48,19 +48,19 @@
                 var cognomeTd = document.createElement("td");
                 var usernameTd = document.createElement("td");
                 var emailTd = document.createElement("td");
-                var cellTd = document.createElement("td");
+                var telTd = document.createElement("td");
 
                 nomeTd.textContent = json.nome;
                 cognomeTd.textContent = json.cognome;
                 usernameTd.textContent = json.username;
                 emailTd.textContent = json.email;
-                cellTd.textContent = json.cell;
+                telTd.textContent = json.tel;
 
                 tr.appendChild(nomeTd)
                 tr.appendChild(cognomeTd)
                 tr.appendChild(usernameTd)
                 tr.appendChild(emailTd)
-                tr.appendChild(cellTd)
+                tr.appendChild(telTd)
 
                 document.getElementById("listaUtenti").appendChild(tr)
             })
