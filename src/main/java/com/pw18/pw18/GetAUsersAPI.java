@@ -20,11 +20,14 @@ public class GetAUsersAPI extends HttpServlet {
 
     Connection connection = null;
 
+    boolean closed;
+
     @Override
     public void init() {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            closed = false;
         } catch (ClassNotFoundException | NullPointerException | SQLException ex) {
             System.out.println(ex);
         }
@@ -34,6 +37,14 @@ public class GetAUsersAPI extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        if(closed) {
+            try {
+                Class.forName("org.apache.derby.jdbc.ClientDriver");
+                connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            } catch (ClassNotFoundException | NullPointerException | SQLException ex) {
+                System.out.println(ex);
+            }
+        }
 
         try{
             String query = "SELECT * FROM USERS WHERE TYPE='aderente'";
@@ -57,6 +68,7 @@ public class GetAUsersAPI extends HttpServlet {
             System.out.println(jsonArray);
             out.println(jsonArray);
             out.flush();
+            closed = true;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

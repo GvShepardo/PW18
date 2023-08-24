@@ -11,6 +11,7 @@
     <link rel="icon" type="image/x-icon" href="attivita1.png">
 </head>
 <body>
+
 <%@include file="header.jsp" %>
 <%@include file="cookie.jsp" %>
 

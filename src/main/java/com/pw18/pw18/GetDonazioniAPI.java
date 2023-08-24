@@ -25,6 +25,8 @@ public class GetDonazioniAPI extends HttpServlet {
     private static final String DB_PASSWORD = "password";
 
     Connection connection = null;
+
+    boolean closed;
     int year = Year.now().getValue();
 
     String[] mesi = {
@@ -38,6 +40,7 @@ public class GetDonazioniAPI extends HttpServlet {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            closed = false;
         } catch (ClassNotFoundException | NullPointerException | SQLException ex) {
             System.out.println(ex);
         }
@@ -45,6 +48,17 @@ public class GetDonazioniAPI extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        if(closed) {
+            try {
+                System.out.println("CIAO");
+                Class.forName("org.apache.derby.jdbc.ClientDriver");
+                connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            } catch (ClassNotFoundException | NullPointerException | SQLException ex) {
+                System.out.println(ex);
+            }
+        }
+
         try {
             String query = "SELECT MESE, COALESCE(SUM(importo), 0) AS IMPORTI FROM (SELECT CAST(MONTH(DATA)-1 AS INTEGER) AS MESE, SUM(IMPORTO) AS IMPORTO FROM DONAZIONE WHERE YEAR(DATA) = " + year + " GROUP BY DATA) AS SOTTOTABELLA GROUP BY MESE";            /*SELECT                CASE MESE
                     WHEN 1 THEN 'Gennaio'
@@ -115,6 +129,7 @@ public class GetDonazioniAPI extends HttpServlet {
             out.println(jsonArray);
             out.flush();
             connection.close();
+            closed = true;
 
 
         } catch (SQLException e) {
