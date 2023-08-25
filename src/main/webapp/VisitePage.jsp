@@ -37,7 +37,7 @@
     var pagine = [];
     var visita = [];
 
-    fetch("GetVisits", {
+    fetch("visite", {
         method:"GET"
     })
         .then(response => response.json())

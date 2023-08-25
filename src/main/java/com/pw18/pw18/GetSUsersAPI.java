@@ -2,6 +2,8 @@ package com.pw18.pw18;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.pw18.pw18.dataClasses.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

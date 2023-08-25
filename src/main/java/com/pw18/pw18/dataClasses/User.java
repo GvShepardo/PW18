@@ -1,4 +1,4 @@
-package com.pw18.pw18;
+package com.pw18.pw18.dataClasses;
 import java.io.Serializable;
 public class User implements Serializable {
     private String username;
