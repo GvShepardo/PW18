@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,12 +14,12 @@ import java.io.PrintWriter;
 import java.sql.*;
 import java.time.Year;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import static java.lang.Integer.parseInt;
 
 @WebServlet(name = "getDonazioni", value = "/getDonazioni")
-public class GetDonazioniAPI extends HttpServlet {
+public class donazioniAPI extends HttpServlet {
 
     private static final String DB_URL = "jdbc:derby://localhost:1527/mainDB";
     private static final String DB_USER = "APP";
@@ -51,7 +52,6 @@ public class GetDonazioniAPI extends HttpServlet {
 
         if(closed) {
             try {
-                System.out.println("CIAO");
                 Class.forName("org.apache.derby.jdbc.ClientDriver");
                 connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             } catch (ClassNotFoundException | NullPointerException | SQLException ex) {
@@ -132,6 +132,40 @@ public class GetDonazioniAPI extends HttpServlet {
             closed = true;
 
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        int valore = parseInt(request.getParameter("donazione"));
+
+        if(closed) {
+            try {
+                Class.forName("org.apache.derby.jdbc.ClientDriver");
+                connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            } catch (ClassNotFoundException | NullPointerException | SQLException ex) {
+                System.out.println(ex);
+            }
+        }
+
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("username")) {
+                    username = cookie.getValue();
+                    break;
+                }
+            }
+        }
+
+        try{
+            String query ="INSERT INTO DONAZIONE (USERNAME, IMPORTO, DATA) VALUES ('"+username+"', '"+valore+"', '"+new Timestamp(System.currentTimeMillis())+"')";
+            Statement stmt = connection.createStatement();
+            stmt.executeUpdate(query);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

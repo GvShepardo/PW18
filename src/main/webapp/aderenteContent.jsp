@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <form action="donazione" method="patch">
+    <form action="getDonazioni" method="post">
         <label for="donazione">Quanto vuoi donare?</label>
         <input type="number" id="donazione" name="donazione" required/>
         <button type="submit">DONA</button>
