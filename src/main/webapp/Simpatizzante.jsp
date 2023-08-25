@@ -3,6 +3,8 @@
 <html lang="it">
 
 <script  src="./javascript/Visite.js"></script>
+
+<script  src="./javascript/Visite.js"></script>
 <script>
     updateVisite("Profilo")
 </script>

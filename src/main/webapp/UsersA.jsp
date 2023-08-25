@@ -2,6 +2,8 @@
 <html>
 <html lang="it">
 
+<script  src="./javascript/Visite.js"></script>
+
 <head>
     <meta charset="utf-8">
     <title>Tum4World</title>

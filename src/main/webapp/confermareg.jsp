@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html>
-<html lang="it">
+
+<script  src="./javascript/Visite.js"></script>
 
 <head>
     <meta charset="utf-8">
