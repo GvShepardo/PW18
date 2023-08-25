@@ -2,7 +2,7 @@
 <html>
 <html lang="it">
 
-<script  src="./javascript/Visite.js"></script>
+<script  src="javascript/Functions.js"></script>
 
 <head>
 	<meta charset="utf-8">

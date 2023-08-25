@@ -2,7 +2,6 @@
 <html>
 <html lang="it">
 
-<script  src="./javascript/Visite.js"></script>
 
 <head>
     <meta charset="utf-8">
@@ -23,3 +22,5 @@
     <%@include file="footer.jsp" %>
 </body>
 </html>
+
+<script  src="javascript/Functions.js"></script>

@@ -1,7 +1,4 @@
-<script  src="./javascript/Visite.js"></script>
-<script>
-	updateVisite("Home")
-</script>
+
 <head>
 	<meta charset="utf-8">
 	<title>Tum4World</title>
@@ -23,10 +20,15 @@
 			<div class="button">
 				<a href="volantino.pdf" download>Scarica il volantino</a>
 			</div>
-			<button onclick="updateVisite('Home')">CLICCAMI VISITE</button>
 		</div>
 	</div>
 <%@include file="footer.jsp"%>
 
 
 </body>
+
+<script  src="javascript/Functions.js"></script>
+<script>
+	updateVisite("Home")
+</script>
+

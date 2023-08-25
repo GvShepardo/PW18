@@ -2,15 +2,11 @@
 <html>
 <html lang="it">
 
-<script  src="./javascript/Visite.js"></script>
-<script>
-	updateVisite("LogIn")
-</script>
 
 <head>
 	<meta charset="utf-8">
 	<title>Tum4World</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css" id="stylesheet">
 	<link rel="icon" type="image/x-icon" href="attivita1.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -47,3 +43,8 @@
 <%@include file="footer.jsp"%>
 </body>
 </html>
+
+<script  src="javascript/Functions.js"></script>
+<script>
+	updateVisite("LogIn")
+</script>

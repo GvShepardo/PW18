@@ -2,7 +2,6 @@
 <html>
 <html lang="it">
 <script src="https://code.highcharts.com/highcharts.js"></script>
-<script  src="./javascript/Visite.js"></script>
 
 <head>
     <meta charset="utf-8">
@@ -113,3 +112,5 @@
 
 
 </script>
+
+<script  src="javascript/Functions.js"></script>

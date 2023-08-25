@@ -3,8 +3,6 @@
 <html lang="it">
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
-<script  src="./javascript/Visite.js"></script>
-
 <head>
     <meta charset="utf-8">
     <title>Tum4World</title>
@@ -106,4 +104,6 @@
 
 
 </html>
+
+<script  src="javascript/Functions.js"></script>
 
