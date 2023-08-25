@@ -22,16 +22,16 @@ var type = getCookie("type");
 console.log("QUESTO E IL COOKIE: " + type)
 if (type === "simpatizzante") {
     console.log(document.getElementById("username"))
-    document.getElementById("stylesheet").setAttribute("href", "simpatizzante.css");
+    document.getElementById("stylesheet").setAttribute("href", "./META_INF/simpatizzante.css");
     console.log("QUESTO E SIMPATIZZANTE")
 } else if (type === "aderente") {
-    document.getElementById("stylesheet").setAttribute("href", "aderente.css");
+    document.getElementById("stylesheet").setAttribute("href", "./META_INF/aderente.css");
     console.log("QUESTO E ADERENTE")
 } else if (type === "admin") {
-        document.getElementById("stylesheet").setAttribute("href", "admin.css");
+        document.getElementById("stylesheet").setAttribute("href", "./META_INF/admin.css");
     console.log("QUESTO E ADMIN")
 } else {
-    document.getElementById("stylesheet").setAttribute("href", "style.css");
+    document.getElementById("stylesheet").setAttribute("href", "./META_INF/style.css");
 }
 }
 
