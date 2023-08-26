@@ -87,10 +87,27 @@ public class UserAPI extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+        if(request.getParameter("register") == null)
+        {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        userModel.login(username,password,response);
+        userModel.login(username,password,response);}
+        else{
+            String nome = request.getParameter("name");
+            String cognome = request.getParameter("surname");
+            String dataNascitaStr = request.getParameter("birthdate");
+            String email = request.getParameter("email");
+            String telefono = request.getParameter("phone");
+            String tipoUtente = request.getParameter("registration-type");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            String confermaPassword = request.getParameter("confirm-password");
+
+            userModel.register(nome, cognome, dataNascitaStr, email, telefono, tipoUtente, username, password, confermaPassword, response);
+        }
     }
 
 }

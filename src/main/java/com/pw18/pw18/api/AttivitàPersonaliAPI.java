@@ -44,7 +44,7 @@ public class AttivitàPersonaliAPI extends HttpServlet {
 
         String username = request.getParameter("username");
 
-        JsonArray jsonArray = attivitàPersonaliModel.exctract(username);
+        JsonArray jsonArray = attivitàPersonaliModel.extract(username);
 
             response.setContentType("application/json");
             response.setCharacterEncoding("utf-8");

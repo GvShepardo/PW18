@@ -6,18 +6,18 @@
 <head>
     <meta charset="utf-8">
     <title>Tum4World</title>
-    <link rel="stylesheet" type="text/css" href="WEB-INF/style.css">
-    <link rel="icon" type="image/x-icon" href="../logo.png">
+    <link rel="stylesheet" type="text/css" href="style/style.css" id="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.png">
 </head>
 <body>
-<%@include file="alwaysPresentPages/header.jsp"%>
-<%@include file="alwaysPresentPages/cookie.jsp"%>
+<%@include file="header.jsp"%>
+<%@include file="cookie.jsp"%>
 
 <div class="container">
 
 </div>
 
-<%@include file="alwaysPresentPages/footer.jsp"%>
+<%@include file="footer.jsp"%>
 </body>
 </html>
 

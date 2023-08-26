@@ -8,8 +8,6 @@ import java.sql.*;
 
 public class GetAllUsersModel {
 
-    GetAllUsersModel getAllUsersModel = new GetAllUsersModel();
-
     private static final String DB_URL = "jdbc:derby://localhost:1527/mainDB";
     private static final String DB_USER = "APP";
     private static final String DB_PASSWORD = "password";
@@ -55,6 +53,7 @@ public class GetAllUsersModel {
     }
 
     public JsonArray extractAderenti() {
+        System.out.println("ADE");
         openConnection();
         JsonArray jsonArray = new JsonArray();
 

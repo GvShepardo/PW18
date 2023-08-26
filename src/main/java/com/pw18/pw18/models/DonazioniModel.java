@@ -58,18 +58,18 @@ public class DonazioniModel {
         JsonArray jsonArray = new JsonArray();
 
         try {
-            String query =  "SELECT MESE, COALESCE(SUM(importo), 0) AS IMPORTI"                             +
-                            "FROM ("                                                                        +
-                            "       SELECT CAST(MONTH(DATA)-1 AS INTEGER) AS MESE, SUM(IMPORTO) AS IMPORTO" +
-                            "       FROM DONAZIONE "                                                        +
-                            "       WHERE YEAR(DATA) = ? "                                                  +
-                            "       GROUP BY DATA)"                                                         +
-                            "AS MOANEY_AND_MONTHS "                                                         +
-                            "GROUP BY MESE";
+            String query =  "SELECT MESE, COALESCE(SUM(importo), 0) AS IMPORTI "                             +
+                            "FROM ( "                                                                        +
+                            "       SELECT CAST(MONTH(DATA)-1 AS INTEGER) AS MESE, SUM(IMPORTO) AS IMPORTO " +
+                            "       FROM DONAZIONE "                                                         +
+                            "       WHERE YEAR(DATA) = ? "                                                   +
+                            "       GROUP BY DATA) "                                                         +
+                            "AS MOANEY_AND_MONTHS "                                                          +
+                            "GROUP BY MESE ";
 
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, year);
-            ResultSet resultSet = preparedStatement.executeQuery(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
 
@@ -101,7 +101,7 @@ public class DonazioniModel {
             preparedStatement.setString(1, username);
             preparedStatement.setInt(2, valore);
             preparedStatement.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
-            preparedStatement.executeUpdate(query);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

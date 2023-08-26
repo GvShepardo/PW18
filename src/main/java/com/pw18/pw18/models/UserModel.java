@@ -35,16 +35,30 @@ public class UserModel {
         }
     }
 
-    public void login(String username, String password, HttpServletResponse response){
+    public void login(String username, String password, HttpServletResponse response) throws IOException {
 
         openConnection();
+        System.out.println("CiAO");
+        if(username.equals("18Adm1n") && password.equals("18Adm1n")){
+            Cookie usernameCookie = new Cookie("username", "admin");
+            usernameCookie.setMaxAge(600);
+            response.addCookie(usernameCookie);
 
+            Cookie typeOfProfileCookie = new Cookie("type", "admin");
+            typeOfProfileCookie.setMaxAge(600);
+            response.addCookie(typeOfProfileCookie);
+
+            response.sendRedirect("home.jsp");
+
+            System.out.println("CiAO a");
+        }
+        else{
         try {
             String query = "SELECT * FROM USERS WHERE USERNAME = ? AND PASSWORD = ? ";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
-            ResultSet resultSet = preparedStatement.executeQuery(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
                 Cookie usernameCookie = new Cookie("username", resultSet.getString("username"));
@@ -64,7 +78,8 @@ public class UserModel {
             e.printStackTrace();
         }
 
-        closeConnection();
+        closeConnection();}
+        System.out.println("CiAO b");
 
     }
 

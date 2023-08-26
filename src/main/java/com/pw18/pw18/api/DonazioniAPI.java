@@ -37,7 +37,6 @@ public class DonazioniAPI extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.println(jsonArray);
             out.flush();
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -57,6 +56,7 @@ public class DonazioniAPI extends HttpServlet {
         }
 
         donazioniModel.add(username, valore);
+        response.sendRedirect("profilo.jsp");
 
     }
 

@@ -27,10 +27,10 @@ public class GetAllUsersAPI extends HttpServlet {
         if(filter == null){
             jsonArray = getAllUsersModel.extractAll();
         }
-        else if(filter == "Aderenti"){
+        else if(filter.equals("Aderenti")){
             jsonArray = getAllUsersModel.extractAderenti();
         }
-        else if(filter == "Simpatizzanti"){
+        else if(filter.equals("Simpatizzanti")){
             jsonArray = getAllUsersModel.extractSimpatizzanti();
         }
         else {

@@ -16,23 +16,25 @@ function getCookie(name) {
     if (parts.length == 2) return parts.pop().split(";").shift();
 }
 
-function setStyleSheet() {
-var type = getCookie("type");
 
-console.log("QUESTO E IL COOKIE: " + type)
-if (type === "simpatizzante") {
-    console.log(document.getElementById("username"))
-    document.getElementById("stylesheet").setAttribute("href", "./META_INF/simpatizzante.css");
-    console.log("QUESTO E SIMPATIZZANTE")
-} else if (type === "aderente") {
-    document.getElementById("stylesheet").setAttribute("href", "./META_INF/aderente.css");
-    console.log("QUESTO E ADERENTE")
-} else if (type === "admin") {
-        document.getElementById("stylesheet").setAttribute("href", "./META_INF/admin.css");
-    console.log("QUESTO E ADMIN")
-} else {
-    document.getElementById("stylesheet").setAttribute("href", "./META_INF/style.css");
-}
-}
+    var type = getCookie("type");
 
-window.onload(setStyleSheet())
+    console.log("QUESTO E IL COOKIE: " + type)
+    console.log(document.getElementById("stylesheet"));
+    if (type === "simpatizzante") {
+        console.log(document.getElementById("username"))
+        document.getElementById("stylesheet").setAttribute("href", "style/simpatizzante.css");
+        console.log(document.getElementById("stylesheet"));
+        console.log("QUESTO E SIMPATIZZANTE")
+    } else if (type === "aderente") {
+        document.getElementById("stylesheet").setAttribute("href", "style/aderente.css");
+        console.log(document.getElementById("stylesheet"));
+        console.log("QUESTO E ADERENTE")
+    } else if (type === "admin") {
+        document.getElementById("stylesheet").setAttribute("href", "style/admin.css");
+        console.log(document.getElementById("stylesheet"));
+        console.log("QUESTO E ADMIN")
+    } else {
+        document.getElementById("stylesheet").setAttribute("href", "style/style.css");
+        console.log(document.getElementById("stylesheet"));
+    }

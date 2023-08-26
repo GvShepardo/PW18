@@ -53,7 +53,7 @@ public class AttivitàPersonaliModel {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, attivita);
-            preparedStatement.executeUpdate(query);
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -62,7 +62,7 @@ public class AttivitàPersonaliModel {
         closeConnection();
     }
 
-    public JsonArray exctract(String username){
+    public JsonArray extract(String username){
         openConnection();
         JsonArray jsonArray = new JsonArray();
 
@@ -70,7 +70,7 @@ public class AttivitàPersonaliModel {
             String query = "SELECT * FROM USERATTIVITA WHERE USERNAME= ? ";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
-            ResultSet resultSet = preparedStatement.executeQuery(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
                 Gson gson = new Gson();
