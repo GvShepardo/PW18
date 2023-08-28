@@ -16,6 +16,9 @@
 
 <div class="container">
     <div class="content">
+        <div id="error-409" style="display: none;">
+            18: L'username è già presente nel DB.
+        </div>
         <h2>Registrazione</h2>
         <form action="user" method="post">
             <input type="hidden" name="register">
@@ -127,6 +130,27 @@
 
     password.addEventListener("input", check);
     confermaPassword.addEventListener("input", check);
+
+    const registrationForm = document.getElementById("registration-form");
+    const error409Message = document.getElementById("error-409");
+
+    registrationForm.addEventListener("submit", async function (event) {
+        const formData = new FormData(registrationForm);
+        const queryParams = new URLSearchParams(formData).toString();
+
+        try {
+            const response = await fetch("user?" + queryParams, {
+                method: "POST",
+            });
+
+            if (response.status === 409) {
+                event.preventDefault();
+                error409Message.style.display = "block";
+            }
+        } catch (error) {
+            console.error("Errore durante la richiesta:", error);
+        }
+    });
 
 </script>
 

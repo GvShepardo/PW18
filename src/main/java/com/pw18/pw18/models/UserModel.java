@@ -131,7 +131,7 @@ public class UserModel {
         } catch (SQLException e) {
             e.printStackTrace();
             if(e.getSQLState().equals("23505")) {
-                response. sendError(HttpServletResponse.SC_BAD_REQUEST, "Username taken");
+                response.setStatus(HttpServletResponse.SC_CONFLICT);
             }
             else {
                 response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Errore DB.");
