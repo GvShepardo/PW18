@@ -73,6 +73,11 @@
             <artifactId>gson</artifactId>
             <version>2.10.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version> <!-- Utilizza la versione più recente disponibile -->
+        </dependency>
     </dependencies>
 
     <build>

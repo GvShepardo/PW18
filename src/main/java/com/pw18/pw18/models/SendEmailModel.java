@@ -8,7 +8,6 @@ import java.sql.*;
 import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
-
 public class SendEmailModel {
 
     private static final String DB_URL = "jdbc:derby://localhost:1527/mainDB";
@@ -52,7 +51,7 @@ public class SendEmailModel {
             // Impostazioni per la sessione email
             Properties properties = System.getProperties();
             properties.setProperty("mail.smtp.host", host);
-            Session session = Session.getDefaultInstance(properties);
+            javax.mail.Session session = javax.mail.Session.getDefaultInstance(properties);
 
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));

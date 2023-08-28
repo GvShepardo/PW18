@@ -14,7 +14,7 @@
 			<p>Indirizzo: Via Nome della Via, 123 - 18000 Città (NA)</p>
 			<p>Telefono: +39 312 345 6789</p>
 			<h3>Inviaci un messaggio</h3>
-			<form class="contact-form" method="post">	<!-- dato che nel testo non era specificato (a differenza della pagina sign-in) ho messo come required solo la e-mail -->
+			<form class="contact-form" method="post" action="SendEmail">	<!-- dato che nel testo non era specificato (a differenza della pagina sign-in) ho messo come required solo la e-mail -->
 				<label for="emailreg">Indirizzo email</label>
 				<input type="email" class="email" name="email" id="emailreg" required> 	<!-- questo tipo controlla in automatico se è una mail valida -->
 
