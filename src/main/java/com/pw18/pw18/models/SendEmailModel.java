@@ -36,6 +36,7 @@ public class SendEmailModel {
             PreparedStatement pstmt = connection.prepareStatement(selectQuery);
             pstmt.setString(1, username);
             ResultSet resultSet = pstmt.executeQuery();
+            resultSet.next();
             String email = resultSet.getString("email");
             pstmt.close();
             connection.close();

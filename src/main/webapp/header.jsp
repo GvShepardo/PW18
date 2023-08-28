@@ -11,7 +11,7 @@
         <li><a href="home.jsp"> Home </a></li>
         <li><a href="chisiamo.jsp"> Chi siamo </a></li>
         <li><a href="attivita.jsp"> Attività </a></li>
-        <li><a href="contatti.jsp"> Contatti </a></li>
+        <li class="logged-in"><a href="contatti.jsp"> Contatti </a></li>
         <li class="logged-out"><a href="registrati.jsp"> Sign-in </a></li>
         <li class="logged-out"><a href="login.jsp"> Login </a></li>
         <li class="logged-in"><a href="profilo.jsp"> Profilo </a></li>

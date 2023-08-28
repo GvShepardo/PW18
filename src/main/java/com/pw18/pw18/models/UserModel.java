@@ -4,7 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -131,7 +134,7 @@ public class UserModel {
         } catch (SQLException e) {
             e.printStackTrace();
             if(e.getSQLState().equals("23505")) {
-                response. sendError(HttpServletResponse.SC_BAD_REQUEST, "Username taken");
+                response. sendError(HttpServletResponse.SC_BAD_REQUEST, "18: Username taken");
             }
             else {
                 response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Errore DB.");
